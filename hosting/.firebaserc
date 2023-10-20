@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "webframework-d2629": {
+      "hosting": {
+        "webframework-d2629": [
+          "webframework-d2629"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "webframework-d2629"
+  }
+}
