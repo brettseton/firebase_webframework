@@ -1,26 +1,15 @@
-import { Injectable, inject } from '@angular/core';
-import { Router } from '@angular/router';
+import { inject, Injectable } from '@angular/core';
 import { Auth, user } from '@angular/fire/auth';
-import {
-  DocumentReference,
-  Firestore,
-  collection,
-  addDoc,
-  serverTimestamp,
-  query,
-  orderBy,
-  limit,
-  DocumentData,
-  collectionData,
-} from '@angular/fire/firestore';
-import { Storage } from '@angular/fire/storage';
+import { Observable } from 'rxjs';
+import { DocumentReference, collection, addDoc, collectionData, serverTimestamp, query, orderBy, limit, DocumentData, getDocs, Firestore } from '@angular/fire/firestore';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ChatService {
 
-  firestore: Firestore = inject(Firestore);
+  private firestore: Firestore = inject(Firestore);
   auth: any = inject(Auth);
   //storage: Storage = inject(Storage);
   router: Router = inject(Router);
@@ -68,19 +57,9 @@ export class ChatService {
   };
 
   // Loads chat messages history and listens for upcoming ones.
-  loadMessages = () => {
+  loadMessages = (): Observable<DocumentData> => {
     console.log("Loading Messages");
-
-    this.user$.subscribe(async (user) => { console.log("user: ", user);});
-    // Create the query to load the last 12 messages and listen for new ones.
-    const recentMessagesQuery = query(collection(this.firestore, 'messages'), orderBy('timestamp', 'desc'), limit(12));
-    console.log("Generated Query: {0}", recentMessagesQuery);
-    // Start listening to the query.
-    const data = collectionData(recentMessagesQuery).forEach((item) => {console.log("Message: {0}", item);});
-    console.log("Data: {0}", data);
-
-
-
+    const recentMessagesQuery = query(collection(this.firestore, '/messages'), orderBy('timestamp', 'desc'), limit(12));
     return collectionData(recentMessagesQuery);
   }
 

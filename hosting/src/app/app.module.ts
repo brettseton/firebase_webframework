@@ -9,7 +9,7 @@ import { provideAuth, getAuth, connectAuthEmulator } from '@angular/fire/auth';
 import { provideFirestore, getFirestore, connectFirestoreEmulator } from '@angular/fire/firestore';
 import { provideStorage, getStorage, connectStorageEmulator } from '@angular/fire/storage';
 import { BodyComponent } from './body/body.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 @NgModule({
@@ -44,6 +44,7 @@ import { CommonModule } from '@angular/common';
   }),
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     CommonModule
   ],
   providers: [],
