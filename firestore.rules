@@ -5,5 +5,28 @@ service cloud.firestore {
     match /{document=**} {
       allow read, write: if false;
     }
+
+    match /messages/{postId} {
+      allow read;
+      allow update: if userOwnsPost();
+      allow delete: if userOwnsPost() || userIsAdmin();
+      allow create: if loggedIn();
+    }
+
+    function loggedIn() {
+      return request.auth.uid != null;
+    }
+
+    function userIsAdmin() {
+      return getUserData().userRole == 'Admin';
+    }
+
+    function getUserData() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data
+    }
+
+    function userOwnsPost() {
+      return resource.data.userId == request.auth.uid;
+    }
   }
 }

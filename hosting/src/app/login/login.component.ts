@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
   login() {
     signInWithPopup(this.auth, this.provider).then((result) => {
         const credential = GoogleAuthProvider.credentialFromResult(result);
-        this.router.navigate(['/', 'chat']);
+        //this.router.navigate(['/', 'chat']);
         return credential;
     })
   }
