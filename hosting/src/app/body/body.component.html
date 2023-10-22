@@ -4,8 +4,7 @@
           <div class="flex flex-col flex-grow p-4 overflow-scroll space-x-3">
               <div *ngIf="user$ | async as user">
                   <div class="flex flex-wrap min-h-[50px] mt-4">
-                      <img class="w-10 h-10 rounded-full" [src]="message['profilePicUrl']"
-                          [alt]="message['name']" />
+                      <img class="w-10 h-10 rounded-full" [src]="message['profilePicUrl']" [alt]="message['name']" />
                       <span class="text-gray-500 mx-5 my-auto">{{message['name']}}: </span>
                   </div>
                   <div class="mt-4 ml-12 p-5 rounded-full max-w-xl bg-amber-200 shadow-lg border-b-2">
