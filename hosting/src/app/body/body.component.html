@@ -1,7 +1,7 @@
-<div class="min-h-screen h-full w-full bg-navy-30">
-  <div class="w-3/4 bg-navy-10 min-h-screen h-full mx-auto flex flex-col flex-grow pb-56">
+<div class="min-h-screen h-full w-full bg-blue-30">
+  <div class="w-3/4 bg-blue-10 min-h-screen h-full mx-auto flex flex-col flex-grow pb-56">
       <div *ngFor="let message of (messages$ | async)?.reverse() as messages;">
-          <div class="flex flex-col flex-grow p-4 overflow-scroll space-x-3">
+          <div class="flex flex-col flex-grow p-4 space-x-3">
               <div *ngIf="user$ | async as user">
                   <div class="flex flex-wrap min-h-[50px] mt-4">
                       <img class="w-10 h-10 rounded-full" [src]="message['profilePicUrl']" [alt]="message['name']" />
@@ -19,19 +19,19 @@
           </div>
       </div>
   </div>
-  <div class="bg-navy-10 w-full shadow-[0_35px_60px_-15px_rgba(0,0,0,1)] min-h-32 h-auto bottom-0 fixed">
+  <div class="bg-white w-full max-h-32 min-h-32 h-auto bottom-0 fixed">
       <div class="flex-wrap flex w-5/6 mx-auto">
           <input type="file" class="file-input hidden" (change)="this.uploadImage($event)" #fileUpload>
-          <div class="file-upload w-16 h-16 rounded-full bg-amber-800 my-3">
-              <button color="primary" class="upload-btn" (click)="fileUpload.click()">
-                Upload File
+          <div class="file-upload w-16 h-16 rounded-full bg-amber-600 my-3">
+              <button color="primary" class="upload-btn w-16 h-16 text-center" (click)="fileUpload.click()">
+                ↑
               </button>
           </div>
           <textarea
-              class="w-4/5 mx-auto h-16 rounded-3xl my-auto overflow-scroll text-gray-900 dark:placeholder-gray-400 p-4"
-              placeholder="Write your thoughts here..." [(ngModel)]="this.text"></textarea>
-          <button class="w-16 h-16 rounded-full bg-amber-800 my-3" (click)="this.sendTextMessage()">
-            Send Message
+              class="w-4/5 mx-auto h-16 rounded-3xl my-auto text-gray-900 border-black border-2 border-solid dark:placeholder-gray-400 p-4 no-scrollbar overflow-y-auto "
+              placeholder="Send message here..." [(ngModel)]="this.text"></textarea>
+          <button class="w-16 h-16 rounded-full bg-amber-600 my-3 text-center" (click)="this.sendTextMessage()">
+            →
           </button>
       </div>
   </div>

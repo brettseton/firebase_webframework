@@ -1,10 +1,25 @@
-<main>
-    <div *ngIf="user$ | async as user; else showLogin">
-      <h3 class="title">{{ user.displayName }}
+<div class="flex flex-wrap items-end auth" *ngIf="user$ | async as user; else showLogin">
+    <div class="flex flex-wrap justify-between text-white">
+      <div class="dropdown inline-block relative shadow-lg">
+        <img class="w-10 h-10 rounded-full" [src]="user?.photoURL" [alt]="user?.displayName" />
+          <ul class="dropdown-menu absolute hidden text-gray-700 pt-3 w-48 right-2">
+              <li class="">
+                  <a class="bg-blue-100 hover:bg-blue-100 py-3 px-4 block whitespace-no-wrap text-blue-500 font-semibold" href="/" (click)="logout()">Logout</a>
+              </li>
+          </ul>
+      </div>
+    <!-- <div *ngIf="user$ | async as user; else showLogin">
+      <h3 class="title">
+        <img class="w-10 h-10 rounded-full" [src]="user?.photoURL" [alt]="user?.displayName" />
         <button class="logout-button" (click)="logout()">Logout</button>
       </h3>
     </div>
     <ng-template #showLogin>
       <button class="login-button" (click)="login()">Login with Google</button>
-    </ng-template>
-</main>
+    </ng-template> -->
+  </div>
+</div>
+
+<ng-template #showLogin>
+  <button class="text-white bg-blue-800 shadow-lg py-2 px-4 rounded inline-flex items-center font-semibold" (click)="login()">Login with Google</button>
+</ng-template>
