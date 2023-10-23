@@ -31,7 +31,7 @@ You should now see the application running at http://localhost:5000
 
 Authentication will NOT work if you use [http://127.0.0.1:5000](http://localhost:5000) (localhost is required)
 
-### To deploy remotely
+### To deploy to firebase
 ```
 firebase deploy
 ```
