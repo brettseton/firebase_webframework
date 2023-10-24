@@ -33,14 +33,12 @@ export class LoginComponent implements OnInit {
   login() {
     signInWithPopup(this.auth, this.provider).then((result) => {
         const credential = GoogleAuthProvider.credentialFromResult(result);
-        //this.router.navigate(['/', 'chat']);
         return credential;
     })
   }
 
   logout() {
       signOut(this.auth).then(() => {
-          this.router.navigate(['/', 'login'])
           console.log('signed out');
       }).catch((error) => {
           console.log('sign out error: ' + error);

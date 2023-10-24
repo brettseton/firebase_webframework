@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { DocumentData } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { ChatService } from 'src/services/chat.service';
 
 @Component({
@@ -12,11 +12,19 @@ import { ChatService } from 'src/services/chat.service';
 export class BodyComponent {
   chatService = inject(ChatService);
   messages$ = this.chatService.loadMessages() as Observable<DocumentData[]>;
+  messagesReversed = this.messages$.pipe(
+    map((messages) => messages.reverse())
+  );
   user$ = this.chatService.user$;
   text = '';
 
   sendTextMessage() {
-    console.log("Sending Message: " + this.text)
+    // Don't send just white space
+    if(this.text.trim().length == 0 ) {
+      console.debug("Not sending Message: " + this.text);
+      return;
+    }
+    console.debug("Sending Message: " + this.text)
     this.chatService.saveTextMessage(this.text);
     this.text = '';
   }

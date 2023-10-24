@@ -29,7 +29,6 @@ import { CommonModule } from '@angular/common';
   }),
   provideFirestore(() => {
       const firestore = getFirestore();
-      console.log("Firestore Location: {0}", location);
       if (location.hostname === 'localhost') {
           connectFirestoreEmulator(firestore, '127.0.0.1', 8080);
       }

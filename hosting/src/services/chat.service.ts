@@ -2,7 +2,6 @@ import { inject, Injectable } from '@angular/core';
 import { Auth, user } from '@angular/fire/auth';
 import { Observable } from 'rxjs';
 import { DocumentReference, collection, addDoc, collectionData, serverTimestamp, query, orderBy, limit, DocumentData, getDocs, Firestore } from '@angular/fire/firestore';
-import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +11,6 @@ export class ChatService {
   private firestore: Firestore = inject(Firestore);
   auth: any = inject(Auth);
   //storage: Storage = inject(Storage);
-  router: Router = inject(Router);
   LOADING_IMAGE_URL = 'https://www.google.com/images/spin-32.gif?a';
 
   // Observable user
