@@ -57,7 +57,7 @@ export class ChatService {
   // Loads chat messages history and listens for upcoming ones.
   loadMessages = (): Observable<DocumentData> => {
     console.log("Loading Messages");
-    const recentMessagesQuery = query(collection(this.firestore, '/messages'), orderBy('timestamp', 'desc'), limit(4));
+    const recentMessagesQuery = query(collection(this.firestore, '/messages'), orderBy('timestamp', 'desc'), limit(6));
     return collectionData(recentMessagesQuery);
   }
 

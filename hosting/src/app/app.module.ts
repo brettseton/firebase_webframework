@@ -11,12 +11,14 @@ import { provideStorage, getStorage, connectStorageEmulator } from '@angular/fir
 import { BodyComponent } from './body/body.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { MessageItemComponent } from './message-item/message-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    BodyComponent
+    BodyComponent,
+    MessageItemComponent
   ],
   imports: [
     provideFirebaseApp(() => initializeApp(environment.firebase)),
