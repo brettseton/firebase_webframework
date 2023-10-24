@@ -1,5 +1,7 @@
 # Firebase Angular Webframework Sample Chat App
 
+A simple chat app that uses Angular with Firebase.
+
 Currently hosted at https://webframework-d2629.web.app
 
 Developed with firebase with the help of https://firebase.google.com/codelabs/firebase-web.
@@ -12,9 +14,10 @@ Code is based on code from https://github.com/firebase/codelab-friendlychat-web/
 cd hosting 
 npm install
 cd ..
+# Follow emulation steps
 ```
 
-### For emulating locally
+### Te emulate locally
 
 ```shell
 # Run from the home directory
