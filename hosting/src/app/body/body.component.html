@@ -14,14 +14,14 @@
         <input type="file" class="file-input hidden" (change)="this.uploadImage($event)" #fileUpload>
         <div class="file-upload w-16 h-16 rounded-full bg-amber-600 my-3">
             <button color="primary" class="upload-btn w-16 h-16 text-center" (click)="fileUpload.click()">
-              ↑
+                <div class="text-white text-4xl text-bold text-center pb-2">↑</div>
             </button>
         </div>
         <textarea
             class="w-4/5 mx-auto h-16 rounded-3xl my-auto text-gray-900 border-black border-2 border-solid dark:placeholder-gray-400 p-4 no-scrollbar overflow-y-auto resize-none"
             placeholder="Send message here..." [(ngModel)]="this.text" (keyup.enter)="this.sendTextMessage()"></textarea>
-        <button class="w-16 h-16 rounded-full bg-amber-600 my-3 text-center" (click)="this.sendTextMessage()">
-          →
+        <button class="w-16 h-16 rounded-full bg-amber-600 my-3 place-content-center" (click)="this.sendTextMessage()">
+          <div class="text-white text-4xl text-bold text-center pb-2">→</div>
         </button>
     </div>
 </div>
