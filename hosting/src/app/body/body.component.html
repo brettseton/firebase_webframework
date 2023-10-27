@@ -18,10 +18,10 @@
             </button>
         </div>
         <textarea
-            class="w-4/5 mx-auto h-16 rounded-3xl my-auto border-sub2 border-2 p-4 no-scrollbar overflow-y-auto resize-none text-txt bg-sub placeholder:text-sub2"
+            class="w-4/5 mx-auto h-16 rounded-3xl my-auto border-sub2 border-2 p-4 no-scrollbar overflow-y-auto resize-none text-txt bg-sub placeholder:text-sub2 focus:outline-none"
             placeholder="Send message here..." [(ngModel)]="this.text" (keyup.enter)="this.sendTextMessage()"></textarea>
         <button class="w-16 h-16 rounded-full my-3 place-content-center bg-sub" (click)="this.sendTextMessage()">
-          <div class=" text-4xl text-bold text-center pb-2  text-txt">→</div>
+          <div class=" text-4xl text-bold text-center pb-2 text-txt">→</div>
         </button>
     </div>
 </div>
