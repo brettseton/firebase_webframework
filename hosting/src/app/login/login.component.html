@@ -1,10 +1,10 @@
 <div class="flex flex-wrap items-end auth" *ngIf="user$ | async as user; else showLogin">
-    <div class="flex flex-wrap justify-between text-white">
-      <div class="dropdown inline-block relative shadow-lg">
+    <div class="flex flex-wrap justify-between">
+      <div class="dropdown inline-block relative">
         <img class="w-10 h-10 rounded-full" [src]="user?.photoURL" [alt]="user?.displayName" />
-          <ul class="dropdown-menu absolute hidden text-gray-700 pt-3 w-48 right-2">
+          <ul class="dropdown-menu absolute hidden pt-3 w-48 right-2 bg-secondary">
               <li class="">
-                  <a class="bg-blue-100 hover:bg-blue-100 py-3 px-4 block whitespace-no-wrap text-blue-500 font-semibold" href="/" (click)="logout()">Logout</a>
+                  <a class="bg-sub hover:bg-sub py-3 px-4 block whitespace-no-wrap font-semibold text-txt" href="/" (click)="logout()">Logout</a>
               </li>
           </ul>
       </div>
@@ -12,5 +12,5 @@
 </div>
 
 <ng-template #showLogin>
-  <button class="text-white bg-blue-800 shadow-lg py-2 px-4 rounded inline-flex items-center font-semibold" (click)="login()">Login with Google</button>
+  <button class="py-2 px-4 rounded inline-flex items-center font-semibold text-txt border-2 border-sub" (click)="login()">Login with Google</button>
 </ng-template>

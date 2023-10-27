@@ -1,8 +1,8 @@
 <div class="flex flex-wrap min-h-[50px] mt-4">
-    <img class="w-10 h-10 rounded-full" [src]="message['profilePicUrl']" [alt]="message['name']" />
-    <span class="text-gray-500 mx-5 my-auto">{{message['name']}}: </span>
+    <img class="w-10 h-10 rounded-full text-txt" [src]="message['profilePicUrl']" [alt]="message['name']" />
+    <span class="mx-5 my-auto text-txt">{{message['name']}}: </span>
 </div>
-<div class="mt-4 ml-12 p-5 rounded-full max-w-xl bg-amber-200 shadow-lg border-b-2">
+<div class="mt-4 ml-12 p-5 rounded-full max-w-xl text-txt bg-sub">
     <div *ngIf="message['text'] && message['text'].length > 0">
         {{message['text']}}
     </div>

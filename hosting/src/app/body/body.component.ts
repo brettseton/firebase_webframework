@@ -6,7 +6,7 @@ import { ChatService } from 'src/services/chat.service';
 @Component({
   selector: 'app-body',
   templateUrl: './body.component.html',
-  styleUrls: ['./body.component.css']
+  styleUrls: ['./body.component.scss']
 })
 
 export class BodyComponent {
