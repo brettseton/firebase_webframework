@@ -10,7 +10,7 @@ module.exports = {
   },
   plugins: [
     createThemes({
-          light: { 
+          fledgling: { 
             'primary': '#3b363f',
             'main': '#fc6e83',
             'main2': '#474747',

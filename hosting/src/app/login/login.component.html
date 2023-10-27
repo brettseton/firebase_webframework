@@ -1,13 +1,13 @@
 <div class="flex flex-wrap items-end auth" *ngIf="user$ | async as user; else showLogin">
-    <div class="flex flex-wrap justify-between">
-      <div class="dropdown inline-block relative">
-        <img class="w-10 h-10 rounded-full" [src]="user?.photoURL" [alt]="user?.displayName" />
-          <ul class="dropdown-menu absolute hidden pt-3 w-48 right-2 bg-secondary">
-              <li class="">
-                  <a class="bg-sub hover:bg-sub py-3 px-4 block whitespace-no-wrap font-semibold text-txt" href="/" (click)="logout()">Logout</a>
-              </li>
-          </ul>
-      </div>
+  <div class="flex flex-wrap justify-between">
+    <div class="dropdown inline-block relative">
+      <img class="w-10 h-10 rounded-full" [src]="user?.photoURL" [alt]="user?.displayName" />
+        <ul class="dropdown-menu absolute hidden pt-3 w-48 right-2 bg-secondary">
+            <li class="">
+                <a class="bg-sub hover:bg-sub py-3 px-4 block whitespace-no-wrap font-semibold text-txt" href="/" (click)="logout()">Logout</a>
+            </li>
+        </ul>
+    </div>
   </div>
 </div>
 

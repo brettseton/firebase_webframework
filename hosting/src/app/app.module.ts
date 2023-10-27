@@ -12,6 +12,7 @@ import { BodyComponent } from './body/body.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { MessageItemComponent } from './message-item/message-item.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { MessageItemComponent } from './message-item/message-item.component';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    CommonModule
+    CommonModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

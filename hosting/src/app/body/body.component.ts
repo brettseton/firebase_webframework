@@ -18,6 +18,16 @@ export class BodyComponent {
   user$ = this.chatService.user$;
   text = '';
 
+  themeList = ['serika', 'serika_dark', 'fledgling', 'sonokai'];
+
+  changeTheme(): void {
+    const themeElement = document.getElementById('myTheme');
+    if (themeElement) {
+      const nextTheme = this.themeList.at(this.themeList.indexOf(themeElement.classList.value) +1) ?? this.themeList[0];
+      themeElement.classList.value = nextTheme;
+    }
+  }
+
   sendTextMessage() {
     // Don't send just white space
     if(this.text.trim().length == 0 ) {
