@@ -58,6 +58,18 @@ module.exports = {
             'err3': '#fc5d7c',
             'err4': '#ecac6a',
           },
+          ms_cupcakes: {
+            'primary': '#ffffff',
+            'main': '#5ed5f3',
+            'main2': '#303030',
+            'sub': '#d64090',
+            'sub2': '#edf8fa',
+            'txt': '#0a282f',
+            'err': '#000000',
+            'err2': '#c9c9c9',
+            'err3': '#ca4754',
+            'err4': '#7e2a33',
+          },
       })
   ],
 }
